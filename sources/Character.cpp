@@ -1,6 +1,5 @@
 #include "Character.hpp"
-
-#include "Character.hpp"
+#include <stdlib.h>
 
 ariel::Character::Character(const std::string& name, const ariel::Point& position, int healthPoints):
     name{name}, position{position}, healthPoints{healthPoints} { 

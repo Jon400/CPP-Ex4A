@@ -10,6 +10,7 @@ namespace ariel{
             std::string name; // represents the name of the character
         public:
             Character(const std::string&, const ariel::Point&, int); // constructor
+            virtual ~Character() = default; // destructor
             bool isAlive() const; // returns true if the character is alive, false otherwise
             double distance(const Character*) const; // receive a pointer to other character and return the distance between them
             void hit(int damage); // receive the damage and subtract it from the health points
@@ -18,6 +19,12 @@ namespace ariel{
             virtual std::string print() const = 0; // prints the character
             int getHealthPoints() const; // returns the health points of the character for testing purposes
             std::string getcharacterName() const; // returns the name of the character for testing purposes
+
+            // for tidy
+            Character(const Character&) = default; // copy constructor
+            Character& operator=(const Character&) = default; // assignment operator
+            Character(Character&&) = default; // move constructor
+            Character& operator=(Character&&) = default; // move assignment operator
     };
 
      class Ninja: public Character{
